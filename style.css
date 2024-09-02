@@ -1,0 +1,235 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos gerais do corpo */
+body {
+    background: linear-gradient(217deg, rgba(255,0,0,.7), rgba(255,0,0,0) 70%),
+                linear-gradient(127deg, rgba(55,200,200,.8), rgba(55,200,200,0) 70%),
+                linear-gradient(336deg, rgba(0,0,255,.9), rgba(0,0,255,0) 70%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    /*color: #333;*/
+}
+
+/* Estilo do cabeçalho */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    background-color: #085486;
+    color: #fff;
+}
+
+/* Estilo do logo */
+.logo .marta {
+    color: #eaeef1;
+    font-size: 35px;
+    font-weight: bold;
+}
+.logo .dev {
+    color:  #ba0505;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+/* Estilo da navegação */
+.menu ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+.menu ul li a {
+    font-size: 24px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+.menu ul li a:hover {
+    background-color: #aca8a8;
+}
+
+/* Estilos das seções principais */
+.secao-principal {
+    margin-left: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.texto-principal {
+    font-size: 24px;
+    max-width: 50%;
+    text-align: justify;
+    word-spacing: normal;
+    letter-spacing: normal;
+}
+
+.texto-ajustado{
+    line-height: 1.8;
+    text-align: justify;
+}
+/* Animação de pulsação para a imagem principal */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+.foto-principal img {
+    display: flex;
+    justify-content: center; /* Centraliza a imagem horizontalmente */
+    align-items: center;
+    margin-top: 20px; /* Ajusta o espaçamento superior */
+    margin-right: 30px;
+    width: 400px; /* Aumenta o tamanho da imagem */
+    height: 500px; /* Ajusta a altura para dar um formato elíptico */
+    object-fit: cover; /* Garante que a imagem preencha o contêiner elíptico */
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; /* Aplica um formato elíptico */
+    border: 5px solid #085486; /* Adiciona uma borda */
+    animation: pulse 3s ease-in-out;/* aplica a animação de pulsação*/
+}
+
+/* Animação de digitação */
+.digitando {
+    border-right: none;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 3s steps(22), blink 0.5s step-end infinite;
+}
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+@keyframes blink {
+    from, to { border-color: transparent; }
+    50% { border-color: transparent; }
+}
+
+/* Estilos da seção Sobre Mim */
+.secao-sobre {
+    padding: 20px;
+}
+.titulo-destaque {
+    text-decoration: underline;
+    text-decoration-color: rgb(6, 57, 145);
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-family: 'Garamond', 'Georgia', serif;
+    color: white;
+}
+
+/* Estilos para os contêineres */
+.objetivos-horizontais {
+    font-size: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.detalhes-sobre {
+    font-size: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.detalhe-item {
+    flex: 1 1 45%;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: justify;
+}
+
+/* Estilos para as tecnologias */
+.icones-tecnologias {
+    display:flex;
+    justify-content: center;
+    gap: 30px;
+    margin:  20px 0;
+}
+.icones-tecnologias img {
+    width: 85px;
+    height: 85px;
+}
+
+/* Estilo do rodapé */
+.rodape {
+    background-color: #085486;
+    color: #fff;
+    padding: 20px 0;
+    text-align:center;
+}
+.info-contato a {
+    color: white;
+    text-decoration: none;
+}
+
+.redes-sociais {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap:30px
+}
+.redes-sociais i {
+    transition: transform 0.3s ease;
+}
+.redes-sociais i:hover {
+    transform: scale(1.2);
+}
+.creditos-rodape {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+/* Rolagem suave */
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .texto-principal {
+        max-width: 100%;
+    }
+    .detalhe-item {
+        flex: 1 1 100%;
+    }
+    .menu ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .menu ul li a {
+        font-size: 18px;
+        padding: 8px 12px;
+    }
+    .titulo-destaque {
+        font-size: 28px;
+    }
+    .icones-tecnologias img {
+        width: 60px;
+        height: 60px;
+    }
+}
